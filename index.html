@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <title>Dashboard-Graphic-MatConsApi</title>
+</head>
+<body>
+  <body class="sb-nav-fixed">
+    <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+        <!-- Navbar Brand-->
+         <img src="assets/img/logo.png" alt="Logo" class="mx-3" style="width: 60px; height: 60px;">
+        <a class="navbar-brand ps-3" href="index.html">Módulo de Vizualización Gráfica de Datos</a>
+        <!-- Sidebar Toggle-->
+        <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+        <!-- Navbar Search-->
+        <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+            <div class="input-group">
+                <input class="form-control" type="text" placeholder="Buscar Por..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="bi bi-search"></i></button>
+            </div>
+        </form>
+        <!-- Navbar-->
+        <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-person-circle"></i></a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#!">Opciones</a></li>
+                    <li><a class="dropdown-item" href="#!">Log Actividad</a></li>
+                    <li><hr class="dropdown-divider" /></li>
+                    <li><a class="dropdown-item" href="#!">Salir</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div id="layoutSidenav">
+        <div id="layoutSidenav_nav">
+            <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                <div class="sb-sidenav-menu">
+                    <div class="nav">
+                        <!-- <div class="sb-sidenav-menu-heading">Opciones</div>
+                        <a class="nav-link" href="index.html">
+                            <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                            Area de Trabajo
+                        </a> -->
+                        <div class="sb-sidenav-menu-heading"><h6><i class="bi bi-gear"></i> Opciones</h6></div>
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon"></div>
+                            <h6><i class="bi bi-pie-chart-fill"></i> Gráficos</h6>
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" id="nuevoGrafico"> <i class="bi bi-plus-circle"></i> Nuevo Gráfico</a>
+                                <a class="nav-link" id="cerrarGrafico"> <i class="bi bi-x-circle"></i> Cerrar Gráfico</a>
+                                <a class="nav-link" id="exportarGrafico"> <i class="bi bi-download"></i> Guardar Gráfico</a>
+                            </nav>
+                        </div>
+                        <!-- <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                            <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                            Pages
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
+                                    Authentication
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        <a class="nav-link" href="#">Nuevo grafico</a>
+                                        <a class="nav-link" href="register.html">Register</a>
+                                        <a class="nav-link" href="password.html">Forgot Password</a>
+                                    </nav>
+                                </div>
+                                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
+                                    Error
+                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                </a>
+                                <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                                    <nav class="sb-sidenav-menu-nested nav">
+                                        <a class="nav-link" href="401.html">401 Page</a>
+                                        <a class="nav-link" href="404.html">404 Page</a>
+                                        <a class="nav-link" href="500.html">500 Page</a>
+                                    </nav>
+                                </div>
+                            </nav>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="sb-sidenav-footer">
+                    <div class="small">Modulo</div>
+                   De Visualización de Datos
+                </div>
+            </nav>
+        </div>
+        <div id="layoutSidenav_content">
+            <main>
+                <div class="container-fluid px-4">
+                    <h1 class="mt-4"><i class="bi bi-sliders"></i> Area de Trabajo</h1>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item active">Tablero</li>
+                    </ol>
+                    <div class="row">
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card bg-primary text-white mb-4">
+                                <div class="card-body">Recursos</div>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <a class="small text-white stretched-link" href="#">Mas Detalles...</a>
+                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card bg-warning text-white mb-4">
+                                <div class="card-body">Costos</div>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <a class="small text-white stretched-link" href="#">Mas Detalles...</a>
+                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card bg-success text-white mb-4">
+                                <div class="card-body">Rendimientos</div>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <a class="small text-white stretched-link" href="#">Mas Detalles...</a>
+                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card bg-danger text-white mb-4">
+                                <div class="card-body">Producción</div>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <a class="small text-white stretched-link" href="#">Mas Detalles...</a>
+                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div id="config" class="col-xl-12">
+                            <div class="card mb-4 px-0">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <h3><i class="bi bi-gear-fill"></i> Parámetros del Gráfico</h3>
+                                        <hr>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <h5>Seleccione los Parámetros del Gráfico</h5>
+                                        <div class="col">
+                                            <h6>Leyenda</h6>
+                                            <div class="form-check form-switch mb-2">
+                                                <input class="form-check-input" type="checkbox" role="switch" id="leyenda">
+                                                <label class="form-check-label fw-bold" for="leyenda">Activar Leyenda</label>
+                                              </div>
+                                        </div>
+                                        <div class="col">
+                                            <h6>Posisión de la Leyenda</h6>
+                                            <div class="form-check">
+                                                <div class="row">
+                                                    <div class="form-check col-3">
+                                                        <input class="form-check-input border-primary casillas" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="top" checked>
+                                                        <label class="form-check-label fw-bold" for="flexRadioDefault1">
+                                                            <i class="bi bi-arrow-up-circle"></i> Arriba
+                                                        </label>
+                                                      </div>
+                                                      <div class="form-check col">
+                                                        <input class="form-check-input border-primary casillas" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="bottom">
+                                                        <label class="form-check-label fw-bold" for="flexRadioDefault2">
+                                                            <i class="bi bi-arrow-down-circle"></i> Abajo
+                                                        </label>
+                                                      </div>
+                                                      <div class="form-check col">
+                                                        <input class="form-check-input border-primary casillas" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="right">
+                                                        <label class="form-check-label fw-bold" for="flexRadioDefault1">
+                                                            <i class="bi bi-arrow-right-circle"></i> Derecha
+                                                        </label>
+                                                      </div>
+                                                      <div class="form-check col">
+                                                        <input class="form-check-input border-primary casillas" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="left">
+                                                        <label class="form-check-label fw-bold" for="flexRadioDefault2">
+                                                            <i class="bi bi-arrow-left-circle"></i> Izquierda
+                                                        </label>
+                                                      </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class="input-group mb-3">
+                                                <label class="input-group-text text-bg-secondary" for="inputGroupSelect01"><i class="bi bi-file-earmark-bar-graph-fill"></i> Datos</label>
+                                                <select class="form-select" id="selectorDatos">
+                                                  <option value="" selected>Elija los Datos a Cargar...</option>
+                                                  <option value="rPC">Recursos por Categorias</option>
+                                                  <option value="rPU">Recursos por Ubicación</option>
+                                                  <option value="pCRIG">Proporción con respecto a Inventario General</option>
+                                                  <option value="cMP">Costos Mensuales de Producción</option>
+                                                  <option value="cTP">Costos Trimestrales de Producción</option>
+                                                  <option value="cSP">Costos Semestrales de Producción</option>
+                                                  <option value="cAP">Costos Anuales de Producción</option>
+                                                  <option value="pDTT">Producción Diaria por Turnos de Trabajo</option>
+                                                  <option value="rUP">Recursos utilizados por productos.</option>
+                                                  <option value="rRHH">Recursos Humanos</option>
+                                                </select>
+                                              </div>                              
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="input-group mb-3">
+                                                <label class="input-group-text text-bg-secondary" for="inputGroupSelect01"><i class="bi bi-diagram-3-fill"></i> Tipo de Gráfico</label>
+                                                <select class="form-select" id="tipoGrafico">
+                                                  <option value="">Elija el tipo de Gráfico...</option>
+                                                  <option value="bar">Barra</option>
+                                                  <option value="doughnut">Dona</option>
+                                                  <option value="polarArea">Area Polar</option>
+                                                  <option value="radar">Radar</option>
+                                                  <option value="pie">Pastel</option>
+                                                  <option value="line">Linea</option>
+                                                </select>
+                                            </div>              
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <button type="button" class="btn btn-danger float-end mx-3" id="cerrarParametros"><i class="bi bi-x-circle-fill"></i> Cerrar</button>
+                                            <button type="button" class="btn btn-primary float-end" id="generarGrafico"><i class="bi bi-play-circle-fill"></i> Generar Gráfico</button>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="col-xl-6">
+                            <div class="card mb-4">
+                                <div class="card-header">
+                                    <i class="fas fa-chart-bar me-1"></i>
+                                    Bar Chart Example
+                                </div>
+                                <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
+                            </div>
+                        </div> -->
+                    </div>
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="row">
+                                <h3><i class="bi bi-clipboard-data-fill"></i> Area de Generación del Gráfico</h3>
+                                <hr>
+                            </div>
+                            <canvas id="grafico" width="100%" height="30%"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid px-4">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">Copyright &copy; Todos los Derechos Reservados 2025 </div>
+                        <div>
+                            <p>Módulo de Vizualización Gráfica de Datos</p>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Area para los Modales de Confirguracion de los Datos del Grafico -->
+          
+     <!-- Modal Body -->
+     <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+     <!-- <div class="modal fade" id="nuevoGrafico" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-xl" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitleId">
+                        Configuracion de los parámetros del gráfico
+                    </h5>
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                    ></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row mb-3">
+                        <h5>Parámetros del Gráfico</h5>
+                        <div class="col">
+                            <h6>Leyenda</h6>
+                            <div class="form-check form-switch mb-2">
+                                <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked>
+                                <label class="form-check-label" for="flexSwitchCheckChecked">Activar Leyenda</label>
+                              </div>
+                        </div>
+                        <div class="col">
+                            <h6>Posisión de la Leyenda</h6>
+                            <div class="form-check">
+                                <div class="row">
+                                    <div class="form-check col">
+                                        <input class="form-check-input border-primary casillas" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="top" checked>
+                                        <label class="form-check-label fw-bold" for="flexRadioDefault1">
+                                            <i class="bi bi-arrow-up-circle"></i> Arriba
+                                        </label>
+                                      </div>
+                                      <div class="form-check col">
+                                        <input class="form-check-input border-primary casillas" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="bottom">
+                                        <label class="form-check-label fw-bold" for="flexRadioDefault2">
+                                            <i class="bi bi-arrow-down-circle"></i> Abajo
+                                        </label>
+                                      </div>
+                                      <div class="form-check col">
+                                        <input class="form-check-input border-primary casillas" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="right">
+                                        <label class="form-check-label fw-bold" for="flexRadioDefault1">
+                                            <i class="bi bi-arrow-right-circle"></i> Derecha
+                                        </label>
+                                      </div>
+                                      <div class="form-check col">
+                                        <input class="form-check-input border-primary casillas" type="radio" name="flexRadioDefault" id="flexRadioDefault2" value="left">
+                                        <label class="form-check-label fw-bold" for="flexRadioDefault2">
+                                            <i class="bi bi-arrow-left-circle"></i> Izquierda
+                                        </label>
+                                      </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="input-group mb-3">
+                                <label class="input-group-text text-bg-secondary" for="inputGroupSelect01"><i class="bi bi-clipboard-data"></i> Datos</label>
+                                <select class="form-select" id="inputGroupSelect01">
+                                  <option selected>Elija los Datos a Cargar...</option>
+                                  <option value="1">One</option>
+                                  <option value="2">Two</option>
+                                  <option value="3">Three</option>
+                                </select>
+                              </div>                              
+                        </div>
+                        <div class="col-6">
+                            <div class="input-group mb-3">
+                                <label class="input-group-text text-bg-secondary" for="inputGroupSelect01"><i class="bi bi-diagram-3-fill"></i> Tipo de Gráfico</label>
+                                <select class="form-select" id="inputGroupSelect01">
+                                  <option selected>Elija el tipo de Gráfico...</option>
+                                  <option value="bar">Barra</option>
+                                  <option value="doughnut">Dona</option>
+                                  <option value="polarArea">Area Polar</option>
+                                  <option value="radar">Radar</option>
+                                  <option value="pie">Pastel</option>
+                                  <option value="line">Linea</option>
+                                </select>
+                            </div>              
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"> Cancelar </button>
+                    <button type="button" class="btn btn-primary" id="generarGrafico">Generar Gráfico</button>
+                </div>
+            </div>
+        </div>
+     </div> -->
+    <script type="module" src="app.js"></script>
+    <script src="assets/js/es6-promise.js"></script>
+    <script src="assets/js/jspdf.umd.min.js"></script>
+    <script src="assets/js/chartStyles.js"></script>
+</body>
+</html>

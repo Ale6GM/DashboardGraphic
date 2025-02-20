@@ -1,0 +1,24 @@
+{
+  "name": "dashboardgraphic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3",
+    "chart.js": "^4.4.7",
+    "html2canvas": "^1.4.1",
+    "html2pdf.js": "^0.10.2",
+    "jquery": "^3.7.1",
+    "jspdf": "^2.5.2",
+    "sweetalert2": "^11.15.10",
+    "vite": "^6.0.7"
+  }
+}
