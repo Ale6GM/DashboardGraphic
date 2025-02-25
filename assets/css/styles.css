@@ -11287,3 +11287,51 @@ body {
 .nav-link {
   cursor: pointer;
 }
+
+.visible {
+  display: block;
+}
+
+.oculto {
+  display: none;
+}
+
+.progresss{
+  position: relative;
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+}
+
+.percentage{
+  position: absolute;
+  top: -3px;
+  left: -1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+svg{
+  width: 7rem;
+  height: 7rem;
+}
+
+svg circle{
+  fill: none;
+  stroke-width: 10;
+  stroke-linecap: round;
+  transform: translate(5px, 5px);
+}
+
+svg circle{
+  stroke: var(--bs-white);
+  stroke-dashoffset: -30;
+  stroke-dasharray: 200;
+}
+
+#menuOpciones {
+  cursor: pointer;
+}

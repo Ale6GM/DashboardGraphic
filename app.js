@@ -16,14 +16,33 @@ let cerrarParametros = document.getElementById("cerrarParametros");
 let tipoGrafico = document.getElementById("tipoGrafico");
 let selectorDatos = document.getElementById("selectorDatos");
 let leyenda = document.getElementById('leyenda');
+let menu = document.getElementById('menuOpciones');
 
+// variables de los vinculos primarios del dashboard
+const vinculoRecursos = document.getElementById('vinculoRecursos');
+const vinculoCostos = document.getElementById('vinculoCostosMensuales');
+const vinculoRHumanos = document.getElementById('vinculoRHumanos');
+const vinculoProduccion = document.getElementById('vinculoProdDiaria');
+
+
+
+// funcion generica para mostrar los paneles
+const mostrarPaneles = (panel) => {
+  panel.classList.toggle('visible');
+};
 
 
 // Eventos para mostrar y ocultar los parametros de configuracion del grafico
 nuevoGrafico.addEventListener("click", () => {
-  //areaParametros.style.display = 'block';
-  areaParametros.classList.add("visible");
+  mostrarPaneles(areaParametros);
 });
+
+// evento para mostrar el panel desde el dropdown
+menu.addEventListener('click', () => {
+  mostrarPaneles(areaParametros);
+})
+
+
 
 cerrarParametros.addEventListener("click", () => {
   areaParametros.classList.remove("visible");
@@ -70,6 +89,11 @@ const generarGraficoRecursosPorCategorias = async () => {
         title: {
           display: true,
           text: "Recursos por Categorias",
+          font: {
+            family: "Poppins",
+            size: 20,
+            weight: "bold",
+          }
         },
         subtitle: {
           display: true,
@@ -77,7 +101,7 @@ const generarGraficoRecursosPorCategorias = async () => {
           color: "black",
           font: {
             size: 12,
-            family: "tahoma",
+            family: "Poppins",
             weight: "normal",
             style: "italic",
           },
@@ -159,6 +183,11 @@ const generarGraficoRecursosPorUbicacion = async () => {
         title: {
           display: true,
           text: "Recursos por Ubicación",
+          font: {
+            family: "Poppins",
+            size: 20,
+            weight: "bold",
+          }
         },
         subtitle: {
           display: true,
@@ -166,7 +195,7 @@ const generarGraficoRecursosPorUbicacion = async () => {
           color: "black",
           font: {
             size: 12,
-            family: "tahoma",
+            family: "Poppins",
             weight: "normal",
             style: "italic",
           },
@@ -237,6 +266,11 @@ const generarGraficoProporcion = async () => {
         title: {
           display: true,
           text: "Proporción con respecto al Inventario General",
+          font: {
+            family: "Poppins",
+            size: 20,
+            weight: "bold",
+          }
         },
         subtitle: {
           display: true,
@@ -244,7 +278,7 @@ const generarGraficoProporcion = async () => {
           color: "black",
           font: {
             size: 12,
-            family: "tahoma",
+            family: "Poppins",
             weight: "normal",
             style: "italic",
           },
@@ -363,6 +397,11 @@ const generarGraficoCostosMensuales = async () => {
         title: {
           display: true,
           text: "Costos Mensuales de Producción",
+          font: {
+            family: "Poppins",
+            size: 20,
+            weight: "bold",
+          }
         },
         subtitle: {
           display: true,
@@ -370,7 +409,7 @@ const generarGraficoCostosMensuales = async () => {
           color: "black",
           font: {
             size: 12,
-            family: "tahoma",
+            family: "Poppins",
             weight: "normal",
             style: "italic",
           },
@@ -556,6 +595,11 @@ const generarGraficoCostosTrimestrales = async () => {
         title: {
           display: true,
           text: "Costos Trimestrales de Producción",
+          font: {
+            family: "Poppins",
+            size: 20,
+            weight: "bold",
+          }
         },
         subtitle: {
           display: true,
@@ -563,7 +607,7 @@ const generarGraficoCostosTrimestrales = async () => {
           color: "black",
           font: {
             size: 12,
-            family: "tahoma",
+            family: "Poppins",
             weight: "normal",
             style: "italic",
           },
@@ -679,6 +723,11 @@ const generarGraficoCostosSemestrales = async () => {
         title: {
           display: true,
           text: "Costos Semestrales de Producción",
+          font: {
+            family: "Poppins",
+            size: 20,
+            weight: "bold",
+          }
         },
         subtitle: {
           display: true,
@@ -686,7 +735,7 @@ const generarGraficoCostosSemestrales = async () => {
           color: "black",
           font: {
             size: 12,
-            family: "tahoma",
+            family: "Poppins",
             weight: "normal",
             style: "italic",
           },
@@ -802,6 +851,11 @@ const generarGrficoCostosAnuales = async () => {
         title: {
           display: true,
           text: "Costos Anuales de Producción",
+          font: {
+            family: "Poppins",
+            size: 20,
+            weight: "bold",
+          }
         },
         subtitle: {
           display: true,
@@ -809,7 +863,7 @@ const generarGrficoCostosAnuales = async () => {
           color: "black",
           font: {
             size: 12,
-            family: "tahoma",
+            family: "Poppins",
             weight: "normal",
             style: "italic",
           },
@@ -891,6 +945,11 @@ const generarGraficoRecursosHumanos = async () => {
         title: {
           display: true,
           text: "Recursos Humanos del Proyecto",
+          font: {
+            family: "Poppins",
+            size: 20,
+            weight: "bold",
+          }
         },
         scale: {
           gridLines: {
@@ -996,6 +1055,11 @@ const generarGraficoProduccionPorTurnos = async () => {
         title: {
           display: true,
           text: "Producción Diaria por turnos de Trabajo",
+          font: {
+            family: "Poppins",
+            size: 20,
+            weight: "bold",
+          }
         },
         subtitle: {
           display: true,
@@ -1003,7 +1067,7 @@ const generarGraficoProduccionPorTurnos = async () => {
           color: "black",
           font: {
             size: 12,
-            family: "tahoma",
+            family: "Poppins",
             weight: "normal",
             style: "italic",
           },
@@ -1091,6 +1155,11 @@ const generarGraficoDeMaterialesPorProducto = async () => {
         title: {
           display: true,
           text: "Materiales Usados por Producto Producido",
+          font: {
+            family: "Poppins",
+            size: 20,
+            weight: "bold",
+          }
         },
         subtitle: {
           display: true,
@@ -1098,7 +1167,7 @@ const generarGraficoDeMaterialesPorProducto = async () => {
           color: "black",
           font: {
             size: 12,
-            family: "tahoma",
+            family: "Poppins",
             weight: "normal",
             style: "italic",
           },
@@ -1169,18 +1238,6 @@ botonGenerarGrafico.addEventListener("click", () => {
     generarGraficoDeMaterialesPorProducto();
   }
 });
-
-// implementacion para mostrar datos de un endpoint usando una arrow function
-
-/* const mostrarDatos = async () => {
-    try {
-        const response = await fetch('http://matconsapi.test/api/usuarios');
-        const datos = await response.json();
-        console.info(datos.data);
-    } catch (error) {
-        console.error("No se pudieron obtener los datos del endpoint:", error.message);
-    }
-} */
 
 // funcion para cerrar el grafico
 botonCerrar.addEventListener("click", () => {
@@ -1336,4 +1393,435 @@ botonExportar.addEventListener("click", async () => {
     });
     console.error("Error:", error);
   }
+});
+
+// funciones para mostrar los graficos desde los vinculos de las targetas principales del dashboard
+
+const generarGraficoRecursosPorCategoriasVinculo = async () => {
+  try {
+    // manejamos el array para la posicion de la Leyenda en el grafico
+    const checkBoxesLeyenda = document.getElementsByClassName('casillas');
+    let posicion = null;
+    posicion = Array.from(checkBoxesLeyenda).find(item => item.checked)?.value || null;
+
+    // Realizamos la consulta de los datos al endPoint
+    const response = await fetch("http://matconsapi.test/api/recursos");
+    const recursos = await response.json();
+
+    // Preparamos los datos para pasarselos al grafico
+    const data = {
+      labels: recursos.map((nombre) => nombre.nombre),
+      datasets: [
+        {
+          data: recursos.map((cantidad) => cantidad.cantidad),
+          borderWidth: 1,
+          borderColor: styles.color.solids.map((color) => color),
+          backgroundColor: styles.color.alphas.map((color) => color),
+          tension: 0.5,
+          fill: true,
+          pointBorderWidth: 5,
+          borderRadius: 5,
+          borderSkipped: false,
+        },
+      ],
+    };
+
+    // Configuracion de las opciones del grafico  
+    const options = {
+      plugins: {
+        legend: {
+          display: leyenda.checked,
+          position: posicion,
+        },
+        title: {
+          display: true,
+          text: "Recursos por Categorias",
+          font: {
+            family: "Poppins",
+            size: 20,
+            weight: "bold",
+          }
+        },
+        subtitle: {
+          display: true,
+          text: "Expresado en Toneladas Métricas",
+          color: "black",
+          font: {
+            size: 12,
+            family: "Poppins",
+            weight: "normal",
+            style: "italic",
+          },
+          padding: {
+            bottom: 10,
+          },
+        },
+        scale: {
+          gridLines: {
+            color: "#fff",
+          },
+          ticks: {
+            display: "false",
+          },
+        },
+      },
+    };
+    // Creamos el grafico
+    grafico = new Chart("grafico", { type: 'bar', data, options });
+
+    // Mostramos un mensaje de exito
+    Swal.fire({
+      title: "Generación Exitosa",
+      text: "El grafico ha sido generado correctamente",
+      icon: "success",
+    });
+  } catch (error) {
+    console.error(
+      "No se pudieron obtener los datos del endpoint:",
+      error.message
+    );
+  }
+};
+
+const generarGraficoCostosMensualesVinculo = async () => {
+  try {
+    // manejamos el array para la posicion de la Leyenda en el grafico
+    const checkBoxesLeyenda = document.getElementsByClassName('casillas');
+    let posicion = null;
+    posicion = Array.from(checkBoxesLeyenda).find(item => item.checked)?.value || null;
+
+    // Realizamos la consulta de los datos al endPoint
+    const response = await fetch("http://matconsapi.test/api/costos");
+    const costos = await response.json();
+
+    // preparamos los datos para el grafico
+    const labels = costos.map((item) => item.mes);
+    const datasets = [
+      {
+        label: "Combustible",
+        data: costos.map((item) => item.Combustible),
+        borderWidth: 1,
+        borderColor: styles.color.solids.map((color) => color),
+        backgroundColor: styles.color.alphas.map((color) => color),
+        tension: 0.5,
+        fill: true,
+        pointBorderWidth: 5,
+        borderRadius: 5,
+        borderSkipped: false,
+      },
+      {
+        label: "Electricidad",
+        data: costos.map((item) => item.Electricidad),
+        borderWidth: 1,
+        borderColor: styles.color.solids.map((color) => color),
+        backgroundColor: styles.color.alphas.map((color) => color),
+        tension: 0.5,
+        fill: true,
+        pointBorderWidth: 5,
+        borderRadius: 5,
+        borderSkipped: false,
+      },
+      {
+        label: "Trasporte",
+        data: costos.map((item) => item.Transporte),
+        borderWidth: 1,
+        borderColor: styles.color.solids.map((color) => color),
+        backgroundColor: styles.color.alphas.map((color) => color),
+        tension: 0.5,
+        fill: true,
+        pointBorderWidth: 5,
+        borderRadius: 5,
+        borderSkipped: false,
+      },
+      {
+        label: "Alimentación",
+        data: costos.map((item) => item.Alimentacion),
+        borderWidth: 1,
+        borderColor: styles.color.solids.map((color) => color),
+        backgroundColor: styles.color.alphas.map((color) => color),
+        tension: 0.5,
+        fill: true,
+        pointBorderWidth: 5,
+        borderRadius: 5,
+        borderSkipped: false,
+      },
+    ];
+    // Definimos las Opciones del grafico
+    const options = {
+      plugins: {
+        legend: {
+          display: leyenda.checked,
+          position: posicion,
+        },
+        title: {
+          display: true,
+          text: "Costos Mensuales de Producción",
+          font: {
+            family: "Poppins",
+            size: 20,
+            weight: "bold",
+          }
+        },
+        subtitle: {
+          display: true,
+          text: "Expresados en Pesos",
+          color: "black",
+          font: {
+            size: 12,
+            family: "Poppins",
+            weight: "normal",
+            style: "italic",
+          },
+          padding: {
+            bottom: 10,
+          },
+        },
+      },
+      scale: {
+        gridLines: {
+          color: "#fff",
+        },
+        ticks: {
+          display: "false",
+        },
+      },
+    };
+    // creamos el grafico
+    grafico = new Chart("grafico", {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: datasets,
+      },
+      options,
+    });
+    // Si el grafico se crea correctamente aparece el mensaje de exito
+    Swal.fire({
+      title: "Generación Exitosa",
+      text: "El grafico ha sido generado correctamente",
+      icon: "success",
+    });
+  } catch (error) {
+    console.error(
+      "No se pudieron obtener los datos del endpoint:",
+      error.message
+    );
+  }
+};
+
+const generarGraficoRecursosHumanosVinculo = async () => {
+  try {
+    // manejamos el array para la posicion de la Leyenda en el grafico
+    const checkBoxesLeyenda = document.getElementsByClassName('casillas');
+    let posicion = null;
+    posicion = Array.from(checkBoxesLeyenda).find(item => item.checked)?.value || null;
+
+    // Consultamos los datos al endpoint
+    const response = await fetch("http://matconsapi.test/api/recursos_humanos");
+    const recursosHumanos = await response.json();
+
+    // preparamos los datos del grafico
+    const data = {
+      labels: recursosHumanos.map((item) => item.categoria),
+      datasets: [
+        {
+          label: "Categorias",
+          data: recursosHumanos.map((item) => item.cantidad),
+          borderWidth: 1,
+          borderColor: styles.color.solids.map((color) => color),
+          backgroundColor: styles.color.alphas.map((color) => color),
+          tension: 0.5,
+          fill: true,
+          pointBorderWidth: 5,
+          borderRadius: 5,
+          borderSkipped: false,
+        },
+      ],
+    };
+
+    const options = {
+      plugins: {
+        legend: {
+          display: leyenda.checked,
+          position: posicion,
+        },
+        title: {
+          display: true,
+          text: "Recursos Humanos del Proyecto",
+          font: {
+            family: "Poppins",
+            size: 20,
+            weight: "bold",
+          }
+        },
+        scale: {
+          gridLines: {
+            color: "#fff",
+          },
+          ticks: {
+            display: "false",
+          },
+        },
+      },
+    };
+
+    grafico = new Chart("grafico", {
+      type: 'bar',
+      data,
+      options,
+    });
+
+    Swal.fire({
+      title: "Generación Exitosa",
+      text: "El grafico ha sido generado correctamente",
+      icon: "success",
+    });
+  } catch (error) {
+    console.error(
+      "No se pudieron obtener los datos del endpoint:",
+      error.message
+    );
+  }
+};
+
+const generarGraficoProduccionPorTurnosVinculo = async () => {
+  try {
+    // manejamos el array para la posicion de la Leyenda en el grafico
+    const checkBoxesLeyenda = document.getElementsByClassName('casillas');
+    let posicion = null;
+    posicion = Array.from(checkBoxesLeyenda).find(item => item.checked)?.value || null;
+
+    // consultamos los datos al endpint
+    const response = await fetch(
+      "http://matconsapi.test/api/produccion_turnos"
+    );
+    const produccion = await response.json();
+
+    // preparamos los datos para el grafico
+    const labels = produccion.map((item) => `Turno ${item.turno}`);
+    const datasets = [
+      {
+        label: "Cemento",
+        data: produccion.map((item) => item.Cemento),
+        borderWidth: 1,
+        borderColor: styles.color.solids.map((color) => color),
+        backgroundColor: styles.color.alphas.map((color) => color),
+        tension: 0.5,
+        fill: true,
+        pointBorderWidth: 5,
+        borderRadius: 5,
+        borderSkipped: false,
+      },
+      {
+        label: "Bloques",
+        data: produccion.map((item) => item.Bloques),
+        borderWidth: 1,
+        borderColor: styles.color.solids.map((color) => color),
+        backgroundColor: styles.color.alphas.map((color) => color),
+        tension: 0.5,
+        fill: true,
+        pointBorderWidth: 5,
+        borderRadius: 5,
+        borderSkipped: false,
+      },
+      {
+        label: "Mortero",
+        data: produccion.map((item) => item.Mortero),
+        borderWidth: 1,
+        borderColor: styles.color.solids.map((color) => color),
+        backgroundColor: styles.color.alphas.map((color) => color),
+        tension: 0.5,
+        fill: true,
+        pointBorderWidth: 5,
+        borderRadius: 5,
+        borderSkipped: false,
+      },
+      {
+        label: "Hormigon",
+        data: produccion.map((item) => item.Hormigon),
+        borderWidth: 1,
+        borderColor: styles.color.solids.map((color) => color),
+        backgroundColor: styles.color.alphas.map((color) => color),
+        tension: 0.5,
+        fill: true,
+        pointBorderWidth: 5,
+        borderRadius: 5,
+        borderSkipped: false,
+      },
+    ];
+    const options = {
+      plugins: {
+        legend: {
+          diplay: leyenda.checked,
+          position: posicion,
+        },
+        title: {
+          display: true,
+          text: "Producción Diaria por turnos de Trabajo",
+          font: {
+            family: "Poppins",
+            size: 20,
+            weight: "bold",
+          }
+        },
+        subtitle: {
+          display: true,
+          text: "Expresados en Toneladas Métricas",
+          color: "black",
+          font: {
+            size: 12,
+            family: "Poppins",
+            weight: "normal",
+            style: "italic",
+          },
+          padding: {
+            bottom: 10,
+          },
+        },
+      },
+      scale: {
+        gridLines: {
+          color: "#fff",
+        },
+        ticks: {
+          display: "false",
+        },
+      },
+    };
+    grafico = new Chart("grafico", {
+      type: 'bar',
+      data: {
+        labels: labels,
+        datasets: datasets,
+        options,
+      },
+    });
+
+    Swal.fire({
+      title: "Generación Exitosa",
+      text: "El grafico ha sido generado correctamente",
+      icon: "success",
+    });
+  } catch (error) {
+    console.error(
+      "No se pudieron obtener los datos del endpoint:",
+      error.message
+    );
+  }
+};
+
+vinculoRecursos.addEventListener('click', () => {
+  generarGraficoRecursosPorCategoriasVinculo();
+});
+
+vinculoCostos.addEventListener('click', () => {
+  generarGraficoCostosMensualesVinculo();
+});
+
+vinculoRHumanos.addEventListener('click', () => {
+  generarGraficoRecursosHumanosVinculo();
+});
+
+vinculoProduccion.addEventListener('click', () => {
+  generarGraficoProduccionPorTurnosVinculo();
 });
